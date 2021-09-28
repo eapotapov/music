@@ -3,11 +3,8 @@
 $noteExtractor = new NoteExtractor();
 while(true)
 {
-    $step = $noteExtractor->getRandomStep(); //select random step from tonality, currently C Major
-
-    $chord = $noteExtractor->getChord($step);
-    readline("Type chord at step ". ($step+1)." of C Major: ");
-
+    $chord = $noteExtractor->getChord($noteExtractor->getRandomStep());
+    readline("Type chord with tonic of " . $chord[0].": ");
     print "\033[01;31m" . implode(' ',$chord)."\033[0m" . "\n";
 }
 
@@ -77,13 +74,5 @@ class NoteExtractor {
 }
 
 class CircleOfFifth { 
-    private $circle;
-    public function __construct()
-    {
-        $this->circle['major']['C']['minor'] == 'Am';
-        $this->circle['major']['C']['signs'] == '';
-        
-
-
-    }
+    
 }
